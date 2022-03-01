@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/footerStyle.css">
+    <link rel="stylesheet" href="./styles/navbarstyle.css">
     <title>Document</title>
-    <link rel = "stylesheet" href= "./ home page.css"/>
+    <link rel = "stylesheet" href= "./homepage.css"/>
 </head>
 <body>
+    <header id = "header"></header>
     <div id = "main">
 
         <div id = "one">
-
-           
             <img id = "img1" src = "https://www.midwestallergyrelief.com/wp-content/uploads/2019/08/Midwest-Allergy-Relief-Centers_Ways-to-Protect-Yourself-from-the-Sun_IMAGE1-624x415.jpeg"/>
             <div class = "textblock">
                     <h2>Save instantly with Expedia Rewards </h2>
@@ -131,7 +132,18 @@
             <p>Explore a world of travel with Expedia</p>
             <p><a href = "#">Discover new places and experiences</a></p>
         </div>
-
     </div>
+    <footer class = "footer" id = "footer">
+            
+    </footer>
+    <script type="module">
+         import footer from "./components/footerModule.js";
+        let x = document.getElementById("footer");
+        x.innerHTML = footer();
+
+        import navbar from "./components/navbar.js";
+        let header = document.getElementById("header");
+        header.innerHTML = navbar();
+    </script>
 </body>
 </html>
