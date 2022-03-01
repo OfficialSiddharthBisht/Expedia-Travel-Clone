@@ -1,4 +1,5 @@
 function print()
 {
-    console.log("hello");
+    console.log("hello just checking");
+
 }
