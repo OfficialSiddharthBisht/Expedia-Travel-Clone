@@ -1,0 +1,53 @@
+/* To Link this stylesheet -
+    <link rel="stylesheet" href="./styles/footerStyle.css">
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@100&display=swap');
+*{
+    margin :0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+.f-container{
+    max-width: 1170px;
+    margin: auto;
+}
+.f-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    list-style:none;
+}
+.footer{
+    padding: 70px 0;
+}
+.footer-col{
+    width: 20%;
+    padding: 0 15px;
+}
+.footer-col h4{
+    font-size: 18px;
+    color: black;
+    margin-bottom: 30px;
+    font-weight: 1000;
+    position: relative;
+}
+.footer-col ul li a {
+    margin-bottom: 10%;
+    font-size: 16px;
+    font-weight: 300;
+    color: blue;
+    text-decoration: none;
+    display: block;
+}
+.last{
+    font-size: 15px;
+    text-align: center;
+    margin: 5%;
+}
+#footer-image{
+  width: 120px;
+  height: 200px;
+  margin : 2%;
+}
