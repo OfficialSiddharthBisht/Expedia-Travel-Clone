@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in Page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div#logo{
+            display: flex;
+            justify-content: center;
+        }
+        nav{
+            background: white;
+            padding: 8px;
+            border: 1px solid #cecece;
+            border-left: none;
+            border-right: none;
+        }
+        .signup-box{
+            width: 360px;
+            height: 620px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="logo">
+           <img src="https://www.expedia.co.in/_dms/header/logo.svg?locale=en_GB&siteid=27&2" alt="">
+        </div>
+    </nav>
+
+    <div class="signup-box">
+        <h1>Create an account</h1>
+        <form>
+            <label>Email address: </label>
+            <input type="email" placeholder="Email address">
+            <label>First name:</label>
+            <input type="text" placeholder="First name">
+            <label>Surname:</label>
+            <input type="text" placeholder="Surname">
+            <label>Password</label>
+            <input type="password" placeholder="Password">
+            <p>By creating an account, I agree to the Expedia <a href="#">Terms and Conditions</a>, <a href="#">Privacy Statement</a>  and <a href="#">Expedia Rewards Terms and Conditions</a>.</p>
+            <input type="button" value="Continue">
+        </form>
+    </div>
+    <p>Already have an account? <a href="#">Sign in</a></p>
+</body>
+</html>
