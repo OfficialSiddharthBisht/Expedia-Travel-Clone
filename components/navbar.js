@@ -3,7 +3,7 @@ function navbar(){
     <nav>
     <ul>
         <div id="left">
-            <li><a href="">
+            <li><a href="index.html">
                 <img src="https://www.expedia.co.in/_dms/header/logo.svg?locale=en_GB&siteid=27&2" alt="" id="logo">
             </a></li>
 
