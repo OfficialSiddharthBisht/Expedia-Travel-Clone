@@ -1,0 +1,30 @@
+/* .sidebar-and-content{
+    display: flex;
+    flex-direction: row;
+    background-color: antiquewhite
+} */
+
+.sidebar{
+    margin: 10%;
+    padding: 2%;
+    width:300px;
+    position: fixed;
+    overflow: auto;
+}
+/* links of sidebar */
+.sidebar a{
+    display: block;
+    color: blue;
+    padding: 20px;
+    text-decoration: none;
+}
+
+/* .sidebar a.active{
+
+} */
+
+div#support-page-content{
+    margin-left: 40%;
+    padding: 2%;
+    /* padding: 1px 16px; */
+}
