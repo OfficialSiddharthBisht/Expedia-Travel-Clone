@@ -38,7 +38,7 @@
      min-height: 3rem;
      font-weight:500;
      border-style:hidden;
-     font-family: "Centra No2", "Segoe UI","Helvetica Neue", Arial, sans-serif;
+     /* font-family: "Centra No2", "Segoe UI","Helvetica Neue", Arial, sans-serif; */
 
      text-shadow: 0px 1px 2px rgb(0 11 38 / 80%);
  }
