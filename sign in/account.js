@@ -1,5 +1,3 @@
-
-
 const FloatLabel = (() => {
   
     // add active class and placeholder 
@@ -43,18 +41,65 @@ const FloatLabel = (() => {
     };
 })();
   
-FloatLabel.init();
+FloatLabel.init(); 
 
-let input = document.querySelector(".input");
-let button = document.querySelector(".button");
+// let input = document.querySelector(".input");
+// let button = document.querySelector(".button");
 
-button.disabled = true;
-input.addEventListener("change", stateHandle);
+// button.disabled = true;
+// input.addEventListener("change", stateHandle);
 
-function stateHandle(){
-    if(document.querySelector(".input").value === ""){
-        button.disabled = true;
+// function stateHandle(){
+//     if(document.querySelector(".input").value === ""){
+//         button.disabled = true;
+//     }else{
+//         button.disabled = false;
+//     }
+// }
+
+function createAcc(e){
+  event.preventDefault();
+  // console.log("working");
+
+  let email = document.getElementById("email").value;
+  let userFirstName = document.getElementById("firstName").value;
+  let userLastName = document.getElementById("lastName").value;
+  let password = document.getElementById("password").value;
+
+  let user = {
+    email : email,
+    firstName : userFirstName,
+    lastName : userLastName,
+    password : password
+  };
+
+  let json = JSON.stringify(user);
+  localStorage.setItem(userFirstName, json);
+  console.log("user added");
+
+  document.getElementById("email").value = "";
+  document.getElementById("firstName").value = "";
+  document.getElementById("lastName").value = "";
+  document.getElementById("password").value = "";
+  }
+  
+  function loginFunc(e){
+    event.preventDefault();
+    // console.log("working");
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    let userEmail = localStorage.getItem(email);
+    let userPass = localStorage.getItem(password);
+
+    userEmail = JSON.parse(userEmail);
+    userPass = JSON.parse(userPass);
+    console.log(userEmail, userPass);
+
+    if(email == userEmail && password == userPass){
+      window.location.href = "index.html";
     }else{
-        button.disabled = false;
+      alert("Inavlid E-mail and password");
     }
-}
+  }
