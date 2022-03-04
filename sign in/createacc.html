@@ -16,33 +16,34 @@
 
     <div class="signup-box">
         <h1>Create an account</h1>
-        <form>
+        <form id="form1" onsubmit="createAcc()">
             <div id="floatContainer" class="float-container">
                 <label>Email address</label>
-                <input class="input" type="email" data-placeholder="Email address">
+                <input class="input" type="email" data-placeholder="Email address" id="email">
             </div>
             <div id="floatContainer" class="float-container">
                 <label>First name</label>
-                <input class="input" type="text" data-placeholder="First name">
+                <input class="input" type="text" data-placeholder="First name" id="firstName">
             </div>
             <div id="floatContainer" class="float-container">
                 <label>Surname</label>
-                <input class="input" type="text" data-placeholder="Surname">
+                <input class="input" type="text" data-placeholder="Surname" id="lastName">
             </div>
             <div id="floatContainer" class="float-container">
                 <label>Password</label>
-                <input class="input" type="password" data-placeholder="Password">
+                <input class="input" type="password" data-placeholder="Password" id="password">
             </div>
             <div id="top">
                 <input type="checkbox" id="public" name="public">
                 <label for="public">This is a public or shared device</label>
               </div>
-            <div id=bottom>
+            <div id="bottom">
                 <input type="checkbox" id="info" name="info" checked>
                 <label for="info">I'd like to recieve travel deals, special offers and other <br> information from Expedia via email</label>
               </div>
             <p>By creating an account, I agree to the Expedia <a href="#">Terms and Conditions</a>, <a href="#">Privacy Statement</a>  and <a href="#">Expedia Rewards Terms and Conditions</a>.</p>
-            <input type="button" value="Continue" class="button"> 
+            <button type="submit" form="form1" value="Submit" id="submit">Continue</button>
+
         </form>
         <p class="para-2">Already have an account? <a href="signin.html">Sign in</a></p>
         <p class="para-3">or continue with</p>
