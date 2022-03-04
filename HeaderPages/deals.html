@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/footerStyle.css" />
+    <link rel="stylesheet" href="/styles/navbarstyle.css" />
+    <link rel="stylesheet" href="/styles/dealsPageStyle.css" />
+    <title>Cheap Holiday Deals | Hotels Flights And Packages | Expedia</title>
+  </head>
+  <body>
+    <header id="header"></header>
+    <div class="content-deals-page">
+      <h1>Holiday Deals + Trip ideas</h1>
+      <h4>Recommendations and savings to inspire next holiday</h4>
+      <br />
+      <h2>Already have a destination in mind?</h2>
+      <div class="box">
+        <!-- ! to import the box here -->
+      </div>
+      <div class="inner-content">
+        <p>
+          Whether you’re a theatre-goer looking to see Broadway on affordable
+          <a href="#"> holiday deals to New York,</a> a sun-worshipper looking
+          for cheap <a href="#">travel deals to Dubai </a> or a history buff
+          interested in booking
+          <a href="#"> holiday deals to Athens,</a> Expedia has got you covered.
+          As a matter of fact, when it comes to cheap travel deals, you’ll find
+          plenty of bargains on a wide selection of destinations around the
+          globe. From all-inclusive holiday deals to cheap hotel deals and
+          5-star holiday deals, we’ll put you where you want to be, and at a
+          price that doesn’t break the bank.
+        </p>
+        <p>
+          Book late <a href="#">holiday deals to Mexico </a> to unwind and
+          de-stress on the magnificent beaches, get away for a weekend of tapas
+          and flamenco on travel deals to Spain or roll the dice on glitzy :
+          <a href="#"
+            >Expedia offers perfect holiday deals for you and your family.
+          </a>
+        </p>
+        <h3>What do we mean by cheap deals ?</h3>
+        <p>
+          <a href="#"
+            >Expedia makes it easy to put together the perfect and affordable
+            trip, as you can make your cheap holiday deals even cheaper by
+            booking a package or go big with an all-inclusive, or just go à la
+            carte by booking cheap flight deals and cheap hotel deals
+            separately. But no matter how you choose to put together your next
+            adventure, Expedia’s travel deals and offers are sure to save you a
+            bundle. Just click on through to see which offers for holidays catch
+            your fancy.
+          </a>
+        </p>
+        <h3>What kinds of holiday can I get a deal on?</h3>
+        <p>
+          <a href="#">Whether you want to choose from our package deals</a>and
+          book <a href="#">holidays to Bali</a>or just stay local with a
+          domestic holiday deal, you can find the ideal getaway on Expedia.
+        </p>
+        <p>
+          When it comes to late travel deals, nearby getaway cities are worth
+          considering, as they offer the perfect opportunity to de-stress on
+          <a href="#">city breaks,</a> especially as you can book cheap hotel
+          deals for just one or two nights. If you’re looking for something a
+          little more epic, you’ll find a number of adventurous options,
+          including <a href="#">travel deals to Thailand </a> and offers on
+          <a href="#">holidays to Ibiza. </a>
+        </p>
+        <h3>How do I find he cheap travel deals?</h3>
+        <p>
+          Travel is the best thing that money can buy, and sometimes it can be
+          expensive, but bagging a bargain on Expedia will allow you to splash
+          out on local food and culture. Not only will you discover great
+          holiday deals, you’ll find inspirations for bucket-list destinations.
+        </p>
+        <p>
+          Just click on through and you’ll find a great selection of cheap
+          holiday deals to suit all tastes and budgets.
+          <a href="#">Last-minute deals </a> and late travel deals offer
+          fantastic savings, so book before they’re gone, and make sure to check
+          back for new deals.
+        </p>
+      </div>
+      <button class="accordion">Explore more travel deals</button>
+      <div class="panel">
+        <ul>
+           <li><a href="#">Hotel deals</a></li>
+           <li><a href="#">Travel deals</a></li>
+           <li><a href="#">Last-minute deals</a></li>
+           <li><a href="#">Hotels with free cancellation</a></li>
+        </ul>
+      </div>
+    </div>
+    <footer class="footer" id="footer"></footer>
+    <script type="module">
+      import footer from "/components/footerModule.js";
+      let x = document.getElementById("footer");
+      x.innerHTML = footer();
+
+      import navbar from "/components/navbar.js";
+      let header = document.getElementById("header");
+      header.innerHTML = navbar();
+
+      //
+      var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+    </script>
+  </body>
+</html>

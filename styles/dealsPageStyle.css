@@ -1,0 +1,25 @@
+*{
+    margin: 2%;
+}
+
+.inner-content h3{ 
+    text-decoration: underline;
+    text-decoration-color: blue;
+
+}
+.accordion {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+.panel a{
+    text-decoration: none;
+}
+.panel{
+    display: none;
+    overflow: hidden;
+}
