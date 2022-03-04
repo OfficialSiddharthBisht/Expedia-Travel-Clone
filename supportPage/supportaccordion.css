@@ -1,0 +1,17 @@
+.accordion{
+    font-weight: bold;
+    font-size: 18px ;
+    color: blue;
+    display: block;
+    padding: 18px;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.5s;
+}
+
+.panel{
+    padding: 0 19px;
+    display: none;
+    overflow: hidden;
+}
