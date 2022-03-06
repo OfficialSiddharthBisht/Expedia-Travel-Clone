@@ -1,0 +1,41 @@
+.Box_below_navbar
+{
+  border: solid black;
+  border-radius: 7px;
+  text-align:center;
+  padding: 10px;
+}
+.btn_container
+{
+  display:flex;
+  flex-direction:row;
+  padding-left:150px;
+}
+.btn_container .tab_buttns
+{ 
+  display: block;
+  border: light black;
+  background-color:white;
+  height:50px;
+  margin: 1px;
+}
+.btn_container .tab_buttns:hover
+{
+  background-color: white;
+  border:solid blue;
+  color: blue;
+}
+.tab_content > div 
+{
+display: grid;
+grid-template-columns: auto auto;
+}
+.hidn_content
+{
+    display: none;
+    width: 310px;
+    position: absolute;
+    top: 95px;
+    left: 20px;
+    z-index: 8;
+}
