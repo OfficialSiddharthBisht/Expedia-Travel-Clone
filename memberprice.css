@@ -1,0 +1,136 @@
+
+body{
+    text-align:center;
+}
+h1{
+    color: #141D38;
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 3.5rem;
+}
+#header{
+  
+    width: 60%;
+    margin: 100px auto;
+}
+#one{
+        margin:0 0 20px 0;
+}
+#para1{
+
+    text-align: center;
+    color:#343B53;
+    font:16px;
+   
+
+}
+button{
+    text-decoration: none;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+
+    background-color: #3662d8;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-family: "Centra No2", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    
+    font-size: 1rem;
+    line-height: 1.25rem;
+    min-height: 2.25rem;
+}
+button:hover{
+    background:darkblue;
+    cursor:pointer;
+}
+#one, #two{
+    line-height: 1.2em;
+}
+p{
+    color:#343B53;
+    font:14px;
+}
+#container {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:10px;
+    margin: 50px 50px;
+   
+}
+#container > div{
+
+    display:flex;
+    border: 1px solid #cecece;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:flex-start;
+    padding:10px;
+    
+}
+img{
+    width:100%;
+    height:200px;
+}
+
+#before-footer{
+    margin: 30px 0 20px 40px;
+    text-align :left
+}
+.text{
+   
+    margin: 30px 0  20px 0;
+
+}
+#boxes{
+   
+    margin: 0 0 30px 0px;
+    text-align: left;
+}
+.text > h1{
+    color: #141d38;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height:0em;
+
+    font-family: "Centra No2", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+#search{
+    padding: 10px 35px;
+}
+
+#tc > h1{
+    color: #141D38;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+
+#tc{
+   margin: 8px 0 0 0;
+   color: #343B53;
+   font-size:14px;
+   font-family: "Centra No2", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: calc(18 / 14);
+}
+.ipt{
+    appearance: none;
+    background-color: #FFFFFF;
+    border: 1px solid #727483;
+    border-radius: 0.5rem;
+    color: #141D38;
+    font-size: 1rem;
+    font-weight: 400;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    width: 10%;
+    padding: 10px 35px;
+}
+#ipt1{
+    width:25%;
+  
+    padding: 10px 35px;
+}
+
+#sticktohead{
+    display:none;
+}
+
