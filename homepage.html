@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/footerStyle.css">
-    <link rel="stylesheet" href="./styles/navbarstyle.css">
     <title>Document</title>
     <link rel = "stylesheet" href= "./homepage.css"/>
 </head>
 <body>
-    <header id = "header"></header>
     <div id = "main">
 
         <div id = "one">
+
             <img id = "img1" src = "https://www.midwestallergyrelief.com/wp-content/uploads/2019/08/Midwest-Allergy-Relief-Centers_Ways-to-Protect-Yourself-from-the-Sun_IMAGE1-624x415.jpeg"/>
             <div class = "textblock">
                     <h2>Save instantly with Expedia Rewards </h2>
@@ -21,47 +19,32 @@
                     <p>You can enjoy access to perks like Member Prices, 
                         saving you 10% or more on select hotels. Terms may apply.</p>
                     
-                    <button id = "btn1">See Member Prices</button>
+                    <button id = "btn1" > <a class = "a1" href = "./memberprice.html">See Member Prices</a></button>
             </div>
+
         </div>
 
         <div id = "two">
-                <div id = "two-1">
-                        <img id = "img2"src = "https://tpc.googlesyndication.com/simgad/14858597537665299669?"/>
-                       <div id = "logo">
-                           
-                            <img src = "https://tpc.googlesyndication.com/simgad/14931291218876135128?"/>
-                            <div >
-                                    <h3>Welcome to Arabia</h3>
-                                    <p>Come on a journey you've never imagined</p>
-                            </div>
-
-                        </div>
-                        
-                </div>
-
                 <div >
-                    <div id = "two-2"> 
+                    <img id = "img2" src = "https://tpc.googlesyndication.com/simgad/14858597537665299669?"/>
+                       
+                </div>  
 
-                        <img class = "img3" src = "https://tpc.googlesyndication.com/simgad/17644702400499192002?">
-                        <div>
-                            <h3>Find your next getaway</h3>
-                            <p>Last minute deals are available</p>
-                         </div>
+                <div id = "logo">
+                    <div id = "im">
+                         <img src = "https://tpc.googlesyndication.com/simgad/14931291218876135128?"/>
                     </div>
-                    <div id = "two-3">
-                        <img class = "img3" src = "https://tpc.googlesyndication.com/simgad/3808556016966627594?">
-                        <div>
-                            <h3>Find the perfect holiday to look forward to.</h3>
-                            <p>Save today on trip for tomorrow</p>
-                        </div>
+                    <div >
+                        <h3>Welcome to Arabia</h3>
+                        <p>Come on a journey you've never imagined</p>
                     </div>
-                </div>
+
+                </div>        
         </div>
 
         <div id = "three" >
 
-            <img src = "https://tpc.googlesyndication.com/simgad/4352085177578628377?"/>
+            <img class = "imres" src = "https://tpc.googlesyndication.com/simgad/4352085177578628377?"/>
                     
         </div>
 
@@ -104,22 +87,21 @@
                     <div id = "text1">
                         <h1>Plan your trip in a snap on the app</h1>
                         <p>From home or hammock, organise your entire escape and explore app offers</p>    
-                        
-                    </div>
+                        <button id = "b1">Switch to the app</button>
+                    </div>                  
+                        <div id = "notinres">
+                            <h2>Text yourself a download link</h2>
 
-                        
-                    <div>
-                        <h2>Text yourself a download link</h2>
-
-                        <select class = "btn2" name= "country code">
-                                <options value = "India +91">India +91</options>
-                        </select>
-                        <input class = "btn2-1" type ="text" placeholder= "phone number"/>
-                        <button class = "btn2-2">Get the app</button>
-                    </div>
+                            <select class = "btn2" name= "country code" >
+                                    <option placeholder = "country code" value = "India-+91">India +91</option>
+                                
+                            </select>
+                            <input class = "btn2-1" type ="text" placeholder= "phone number"/>
+                            <button class = "btn2-2">Get the app</button>
+                        </div>
 
                         <p id = "consent" >By providing your number, you agree to receive a one-time automated text message with a link to get the app. Standard text message rates may apply.</p>
-                </div>
+                     </div>
 
                     <div id = "qrcode1">
                         <img class = "qrcode" src = "https://a.travel-assets.com/mad-service/qr-code/footer_qr/27_QR_FOOTER.png"/>
@@ -133,17 +115,9 @@
             <p><a href = "#">Discover new places and experiences</a></p>
         </div>
     </div>
-    <footer class = "footer" id = "footer">
-            
-    </footer>
-    <script type="module">
-         import footer from "./components/footerModule.js";
-        let x = document.getElementById("footer");
-        x.innerHTML = footer();
-
-        import navbar from "./components/navbar.js";
-        let header = document.getElementById("header");
-        header.innerHTML = navbar();
-    </script>
+    </div>
 </body>
 </html>
+
+<script type = "module" >  
+</script>
