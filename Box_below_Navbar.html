@@ -32,7 +32,8 @@
   background-color:white;
   height:50px;
   padding:5px;
-  margin: 0px;
+  margin: 5px;
+  margin-bottom: 0px;
 }
 .btn_container .tab_buttns:hover
 {
@@ -40,10 +41,7 @@
   border-bottom:solid #008CBA;
   color:#008CBA ;
 }
-.btn_container .tab_buttns:active
-{
-color: #008CBA;
-}
+
 .hidn_content
 {
     display: none;
@@ -109,10 +107,11 @@ color: #008CBA;
   padding-top:30px;
   margin:0px;
 }
-.flight_top_btns, .car_top_btn, 
+.flight_top_btns, .car_top_btn 
 {
     display: block;
     padding-bottom: 30px;
+    margin-bottom: 5px;
 }
 button
 {
@@ -145,10 +144,56 @@ select
 {
     color: #008CBA;
     border: none;
+    margin-bottom: 5px;
 }
 select:hover
 {
  text-decoration-line:underline;
+}
+#where
+{   width: 400px;
+    position: absolute;
+    top: 250px;
+    left: 100px;
+    background-color: #cecece;
+}
+.going_to_hidnctnt
+{
+display: flex;
+flex-direction: row;
+}
+.going_to_hidnctnt > input
+{
+    width: 100%;
+    margin-left: 0px;
+}
+.going_to_hidnctnt > button
+{ padding: 5px;
+    margin: 0px;
+}
+#checkin
+{
+    width: 400px;
+    position: absolute;
+    top: 250px;
+    left: 300px;
+    background-color: #cecece;  
+}
+#checkout
+{
+    width: 400px;
+    position: absolute;
+    top: 250px;
+    left: 500px;
+    background-color: #cecece;   
+}
+#travellers
+{
+    width: 400px;
+    position: absolute;
+    top: 250px;
+    left: 800px;
+    background-color: #cecece;
 }
 
 </style>
@@ -179,25 +224,33 @@ select:hover
             <div class="searchdiv">
                <button id="searchbtn">Search</button>
             </div>
-            <div class="hidn_content">                    
+            <div class="hidn_content" id="where">
+                <div class="going_to_hidnctnt">                   
                 <button class="closebtns" onclick="closeitem(0)">X</button>                
-                <input type="text" placeholder="Where are you going">                    
+                <input type="text" placeholder="Where are you going">
+                </div>                     
             </div>
-            <div class="hidn_content">                    
+            <div class="hidn_content" id="checkin"> 
+                <div class="going_to_hidnctnt">                 
                 <button class="closebtns" onclick="closeitem(1)">X</button>                
-                <input type="date" id="Check_in"  name="Check-in">                  
+                <input type="date" id="Check_in"  name="Check-in">
+                </div>                    
             </div> 
-            <div class="hidn_content">                    
+            <div class="hidn_content" id="checkout">
+                <div class="going_to_hidnctnt">                  
                 <button class="closebtns" onclick="closeitem(2)">X</button>                
                 <input type="date" id="Check_out"  name="Check-out">
+                </div>
             </div>
-            <div class="hidn_content">                    
+            <div class="hidn_content" id="travellers">
+                <div class="going_to_hidnctnt">                      
                 <button class="closebtns" onclick="closeitem(3)">X</button>                
                 <select name="travellers" >                           
                 <option>Adults</option>                           
                 <option>Children</option>                           
                 <option>Infants</option>                       
-                </select>                   
+                </select>
+                </div>                   
             </div>
           </div>
         </div>            
