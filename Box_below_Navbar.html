@@ -9,158 +9,280 @@
 <style>
     .Box_below_navbar
 {
-  border: solid black;
+  border: solid lightslategray;
   border-radius: 7px;
   text-align:center;
-  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 80px;
+
 }
 .btn_container
 {
-  display:flex;
-  flex-direction:row;
-  padding-left:150px;
+  display:block;
+  text-align:center;
+  margin:0px;
 }
 .btn_container .tab_buttns
 { 
-  display: block;
-  border: light black;
+  display: inline-block;
+  border: none;
+  transition:0.2s;
+  font-weight:bold;
   background-color:white;
   height:50px;
-  margin: 1px;
+  padding:5px;
+  margin: 0px;
 }
 .btn_container .tab_buttns:hover
 {
   background-color: white;
-  border:solid blue;
-  color: blue;
+  border-bottom:solid #008CBA;
+  color:#008CBA ;
 }
-.tab_content > div 
+.btn_container .tab_buttns:active
 {
-display: grid;
-grid-template-columns: auto auto;
+color: #008CBA;
 }
 .hidn_content
 {
     display: none;
     width: 310px;
     position: absolute;
-    top: 95px;
+    border: 1px solid #cecece;
+    height: 400px;
+    background-color: #cecece;
     left: 20px;
-    z-index: 8;
+    z-index: 1;
+}
+.hid_data
+{
+  position: relative;
+  background-color: white; 
+  border: light grey;
+  border-radius: 6px;
+  color: grey;
+  width:50%;
+  padding: 15px;
+  font-size: 16px;
+  margin-bottom: 10px;
+
+}
+.hid_data1
+{
+  background-color: white; 
+  border: light grey;
+  border-radius: 6px;
+  color: grey;
+   width: 25%;
+   margin-bottom: 10px; 
+}
+.hid_data2
+{
+  background-color: white; 
+  border: light grey;
+  border-radius: 6px;
+  color: grey;
+  width: 40%;
+  margin-bottom: 10px;
+}
+.stay_btns,.flight_btns,.car_btns, .packages_btns,.things_btns
+{
+  display:flex;
+  flex-direction: row;
+}
+#searchbtn
+{
+  background-color: #008CBA; 
+  border: light grey;
+  border-radius: 6px;
+  color: solid black;
+  width:30%;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight:bold;
+}
+.searchdiv
+{
+  display:block;
+  padding-top:30px;
+  margin:0px;
+}
+.flight_top_btns, .car_top_btn, 
+{
+    display: block;
+    padding-bottom: 30px;
+}
+button
+{
+    margin: 0px;
+}
+.flighttopbtns,.cartopbtns
+{
+border: thin black;
+border-radius: 6px;
+padding: 10px;
+margin: 0px;
+font-weight: bold;
+background-color: white;
+}
+.cartopbtns:hover
+{
+    color: #008CBA;
+    background-color: lightgray;
+}
+.flighttopbtns:hover
+{
+    color: #008CBA;
+    background-color: lightgray;
+}
+hr
+{
+    margin-top: 0%;
+}
+select
+{
+    color: #008CBA;
+    border: none;
+}
+select:hover
+{
+ text-decoration-line:underline;
 }
 
 </style>
 <body>
     <div class="Box_below_navbar">
         <div class="btn_container">
-            <button class="tab_buttns" onclick="showPanel(0)">Stay</button>
-            <button class="tab_buttns" onclick="showPanel(1)">Flights</button>
-            <button class="tab_buttns" onclick="showPanel(2)" >Cars</button>
-            <button class="tab_buttns" onclick="showPanel(3)">Packages</button>
-            <button class="tab_buttns" onclick="showPanel(4)">Things to do</button>
+          <button class="tab_buttns" onclick="showPanel(0)">Stay</button>
+          <button class="tab_buttns" onclick="showPanel(1)">Flights</button>     
+          <button class="tab_buttns" onclick="showPanel(2)" >Cars</button> 
+          <button class="tab_buttns" onclick="showPanel(3)">Packages</button>       
+          <button class="tab_buttns" onclick="showPanel(4)">Things to do</button>   
         </div>
-        <div class="tab_contents_container">
-            <div class="tab_content">
-            <div id="stay_content">
-                <button class="hid_data" onclick="showdata(0)">Going to</button>
-                <div class="hidn_content">
-                    <button class="closebtns" onclick="closeitem(0)">X</button>
-                    <input type="text" placeholder="Where are you going">
-                </div>
-                <button class="hid_data" onclick="showdata(1)">Check-in </button>
-                <div class="hidn_content">
-                    <button class="closebtns" onclick="closeitem(1)">X</button>
-                    <input type="date" id="Check_in"  name="Check-in">  
-                </div>
-                <button class="hid_data" onclick="showdata(2)">Check-in </button>
-                <div class="hidn_content">
-                    <button class="closebtns" onclick="closeitem(2)">X</button>
-                    <input type="date" id="Check_out"  name="Check-out">  
-                </div>
-                <button class="hid_data" onclick="showdata(3)">Travellers</button>
-                    <div class="hidn_content">
-                    <button class="closebtns" onclick="closeitem(3)">X</button>
-                       <select name="travellers" >
-                           <option>Adults</option>
-                           <option>Children</option>
-                           <option>Infants</option>
-                       </select>
-                   </div>
-                <input type="checkbox" id="Add_flight"name="Add_flight" value="Add a Flight">
-                <label for="Add_flight">Add a Flight</label>
-                <input type="checkbox" id="Add_car" name="Add_car">
-                <label for="Add_car">Add a Car</label>
-                <button id="searchbtn">Search</button>
+        <hr/> 
+      <div class="tab_contents_container">            
+        <div class="tab_content">            
+            <div class="stay_btns">
+             <button class="hid_data" onclick="showdata(0)">Going to</button>            
+             <button class="hid_data1" onclick="showdata(1)">Check-in </button>           
+             <button class="hid_data1" onclick="showdata(2)">Check-out </button>           
+             <button class="hid_data2" onclick="showdata(3)">Travellers</button>        
             </div>
+            <div class="checkbox">
+               <input type="checkbox" id="Add_flight"name="Add_flight" value="Add a Flight"> 
+               <label for="Add_flight">Add a Flight</label>                
+               <input type="checkbox" id="Add_car" name="Add_car">                
+               <label for="Add_car">Add a Car</label> 
             </div>
-            <div class="tab_content">
-            <button id="returnbtn">Return</button>
-            <button id="oneWay">One-way</button>
-            <button id="muliti_city">Muliti-city</button>
-            <select id="traveller_btn">
-                <option>Adults</option>
-                <option>Children</option>
-                <option>Infants</option>
+            <div class="searchdiv">
+               <button id="searchbtn">Search</button>
+            </div>
+            <div class="hidn_content">                    
+                <button class="closebtns" onclick="closeitem(0)">X</button>                
+                <input type="text" placeholder="Where are you going">                    
+            </div>
+            <div class="hidn_content">                    
+                <button class="closebtns" onclick="closeitem(1)">X</button>                
+                <input type="date" id="Check_in"  name="Check-in">                  
+            </div> 
+            <div class="hidn_content">                    
+                <button class="closebtns" onclick="closeitem(2)">X</button>                
+                <input type="date" id="Check_out"  name="Check-out">
+            </div>
+            <div class="hidn_content">                    
+                <button class="closebtns" onclick="closeitem(3)">X</button>                
+                <select name="travellers" >                           
+                <option>Adults</option>                           
+                <option>Children</option>                           
+                <option>Infants</option>                       
+                </select>                   
+            </div>
+          </div>
+        </div>            
+        <div class="tab_content">
+          <div class="flight_top_btns">           
+            <button class="flighttopbtns">Return</button>            
+            <button class="flighttopbtns">One-way</button>            
+            <button class="flighttopbtns">Muliti-city</button>
+          </div>
+          <div class="flight_select_options">             
+            <select id="traveller_btn">                
+                <option>Adults</option>                
+                <option>Children</option>                
+                <option>Infants</option>            
+            </select>            
+            <select id="class_btn">                
+                <option value="economy">Economy</option>                
+                <option value="premium_economy">Premium Economy</option>                
+                <option value="business">Business</option>                
+                <option value="first_class">First class</option>            
             </select>
-            <select id="class_btn">
-                <option value="economy">Economy</option>
-                <option value="premium_economy">Premium Economy</option>
-                <option value="business">Business</option>
-                <option value="first_class">First class</option>
-            </select>
-            <input type="text" id="leaving_from" placeholder="Leaving from">
-            <input type="text" id="going_to" placeholder="Going to">
-            <label for="departing">Departing</label>
-            <input type="date" id="departing"  name="departing">
-            <label for="Returning">Returning</label>
-            <input type="date" id="Returning" name="Returning">
+          </div>            
+          <div class="flight_btns">
+            <button class="hid_data" onclick="showdata(0)">Leaving from</button>            
+            <button class="hid_data" onclick="showdata(1)">Going to</button>           
+            <button class="hid_data" onclick="showdata(2)">Departing</button>           
+            <button class="hid_data" onclick="showdata(3)">Returning</button>        
+          </div> 
+          <div class="searchdiv">
             <button id="searchbtn">Search</button>
-            </div>
-            <div class="tab_content">
-            <button id="car_hire">Car hire</button>
-            <button id="air_transport">Airpot transport</button>
-            <select>
-                <option>Adults</option>
-                <option>Children</option>
-                <option>Infants</option>
-            </select>
-            <input type="text" id="pick_up" placeholder="Pick-up">
-            <input type="text" id="drop" placeholder="Same as pick-up">
-            <label for="pick_up_date">Pick-up Date</label>
-            <input type="date" id="pick_up_date" name="pick_up_date">
-            <label for="drop_off_date">Drop-off date</label>
-            <input type="date" id="drop_off_date" name="drop_off_date">
-            <label for="pick_up_time">Pick-up time</label>
-            <input type="time" id="pick_up_time" name="pick_up_time">
-            <label for="drop_off_time">Drop-off time</label>
-            <input type="time" id="drop_off_time" name="drop_off_time">
-            <button class="searchbtn">Search</button>
-            </div>
-            <div class="tab_content">
-            <select>
-                <option>Adults</option>
-                <option>Children</option>
-                <option>Infants</option>
-            </select>
-            <input type="text" id="leaving_from" placeholder="Leaving from">
-            <input type="text" id="going_to" placeholder="Going to">
-            <label for="departing">Departing</label>
-            <input type="date" id="departing"  name="departing">
-            <label for="Returning">Returning</label>
-            <input type="date" id="Returning" name="Returning">
-            <input type="checkbox" id="accomadation" name="accomadation">
-            <label for="accomadation">I only need accomadation for part of my trip</label>
-            <button class="searchbtn">Search</button>
-            </div>
-            <div class="tab_content">
-            <input type="text" id="things" placeholder="Things to do in">
-            <label for="from">From</label>
-            <input type="date" id="from" name="from">
-            <label for="to">To</label>
-            <input type="date" id="to" name="to">
-            <button class="searchbtn">Search</button>
-            </div>
-        </div>
+          </div>           
+        </div>            
+        <div class="tab_content">
+         <div class="car_top_btn">           
+          <button class="cartopbtns">Car hire</button>            
+          <button class="cartopbtns">Airpot transport</button>
+         </div>             
+          <select>                
+            <option>Adults</option>                
+            <option>Children</option>                
+            <option>Infants</option>           
+          </select>            
+          <div class="car_btns">
+            <button class="hid_data" onclick="showdata(0)">Pick-up</button>            
+            <button class="hid_data" onclick="showdata(1)">Same as pick-up</button>           
+            <button class="hid_data" onclick="showdata(2)">Pick-up date</button>           
+            <button class="hid_data" onclick="showdata(3)">Drop-off date</button> 
+            <button class="hid_data" onclick="showdata(2)">Pick-up time</button>           
+            <button class="hid_data" onclick="showdata(3)">Drop-off time</button>        
+          </div>           
+          <div class="searchdiv">
+            <button id="searchbtn">Search</button>
+          </div>           
+        </div>            
+        <div class="tab_content">            
+          <select>                
+            <option>Adults</option>                
+            <option>Children</option>                
+            <option>Infants</option>           
+          </select>
+            <div class="packages_btns">            
+              <button class="hid_data" onclick="showdata(0)">Leaving from</button>            
+              <button class="hid_data" onclick="showdata(1)">Going to</button>           
+              <button class="hid_data" onclick="showdata(2)">Departing</button>           
+              <button class="hid_data" onclick="showdata(3)">Returning</button> 
+            </div> 
+          <div class="package_checkbox">        
+            <input type="checkbox" id="accomadation" name="accomadation">            
+            <label style="font-weight:300; font-size: 95%;font-family: Verdana, Geneva, Tahoma, sans-serif;" for="accomadation">I only need accomadation for part of my trip</label>
+          </div>             
+          <div class="searchdiv">
+            <button id="searchbtn">Search</button>
+          </div>   
+        </div>            
+        <div class="tab_content">            
+          <div class="things_btns">            
+            <button class="hid_data" onclick="showdata(0)">Things to do in</button>            
+            <button class="hid_data" onclick="showdata(1)">From</button>           
+            <button class="hid_data" onclick="showdata(2)">To</button>           
+          </div>      
+          <div class="searchdiv">
+            <button id="searchbtn">Search</button>
+          </div>       
+        </div>        
+      </div>    
     </div>
     <script>
         var tab_buttns=document.querySelectorAll(".tab_buttns");
