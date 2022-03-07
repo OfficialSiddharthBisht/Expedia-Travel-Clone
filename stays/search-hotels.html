@@ -8,6 +8,8 @@
      <link rel="stylesheet" 
           href=
 "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/styles/navbarstyle.css">
+<link rel="stylesheet" href="/styles/footerStyle.css">
 
 <style>
 
@@ -125,7 +127,9 @@
 </head>
 <body>
 
+    <header class="header" id="header">
 
+    </header>
 
     <div id = "search">
       
@@ -317,7 +321,19 @@
     </div>
 
     <div id = "container"></div>
+    <br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br> <br><br><b></b> <br><br><br><br>
+    <footer class="footer" id="footer">
 
+    </footer>
+        <script type = "module">  
+        import footer from "/components/footerModule.js";
+        let x = document.getElementById("footer");
+        x.innerHTML = footer();
+
+        import navbar from "/components/navbar.js";
+        let header = document.getElementById("header");
+        header.innerHTML = navbar();
+</script>
 </div>
 </body>
 </html>
