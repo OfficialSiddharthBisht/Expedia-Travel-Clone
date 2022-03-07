@@ -18,7 +18,7 @@ nav{
     border-left: none;
     border-right: none;
 }
-.signup-box{
+.signup-box, #welcome{
     width: 350px;
     height: 620px;
     margin: auto;
