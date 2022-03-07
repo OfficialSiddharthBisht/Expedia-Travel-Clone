@@ -4,7 +4,7 @@ function navbar(){
     <ul>
         <div id="left">
             <li><a href="index.html">
-                <img src="https://www.expedia.co.in/_dms/header/logo.svg?locale=en_GB&siteid=27&2" alt="" id="logo" width: 50px height =50px>
+                <img src="https://www.expedia.co.in/_dms/header/logo.svg?locale=en_GB&siteid=27&2" alt="" id="">
                 </a></li>
                 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
             <select name="travel" id="travel">
@@ -23,7 +23,7 @@ function navbar(){
         <div class="items">
             <li><a href="">English</a></li>
             <li><a href="">Support</a></li>
-            <li><a href="">Trips</a></li>
+            <li><a href="/Trips/trips.html">Trips</a></li>
             <li><a href="./sign in/signin.html">Sign in</a></li>
         </div>
     </ul>

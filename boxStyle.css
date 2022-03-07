@@ -1,44 +1,177 @@
 .Box_below_navbar
 {
-  margin-left: 60px;
-  margin-right: 60px;
-  border: solid grey;
+  border: solid lightslategray;
   border-radius: 7px;
   text-align:center;
-  padding: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 80px;
+
 }
 .btn_container
 {
-  display:flex;
-  flex-direction:row;
-  padding-left:150px;
+  display:inline-block;
+  text-align:center;
+  margin:0px;
 }
 .btn_container .tab_buttns
 { 
-  display: block;
-  /* border: light black; */
+  display: inline-block;
+  border: none;
+  transition:0.2s;
+  font-weight:bold;
   background-color:white;
   height:50px;
-  margin: 1px;
-  padding: 10px;
+  padding:5px;
+  margin: 5px;
+  margin-bottom: 0px;
 }
 .btn_container .tab_buttns:hover
 {
   background-color: white;
-  border:solid blue;
-  color: blue;
+  border-bottom:solid #008CBA;
+  color:#008CBA ;
 }
-.tab_content > div 
-{
-display: grid;
-grid-template-columns: auto auto;
-}
+
 .hidn_content
 {
     display: none;
     width: 310px;
     position: absolute;
-    top: 95px;
+    border: 1px solid #cecece;
+    height: 400px;
+    background-color: #cecece;
     left: 20px;
-    z-index: 8;
+    z-index: 1;
+}
+.hid_data
+{
+  position: relative;
+  background-color: white; 
+  border: light grey;
+  border-radius: 6px;
+  color: grey;
+  width:50%;
+  padding: 15px;
+  font-size: 16px;
+  margin-bottom: 10px;
+
+}
+.hid_data1
+{
+  background-color: white; 
+  border: light grey;
+  border-radius: 6px;
+  color: grey;
+   width: 25%;
+   margin-bottom: 10px; 
+}
+.hid_data2
+{
+  background-color: white; 
+  border: light grey;
+  border-radius: 6px;
+  color: grey;
+  width: 40%;
+  margin-bottom: 10px;
+}
+.stay_btns,.flight_btns,.car_btns, .packages_btns,.things_btns
+{
+  display:flex;
+  flex-direction: row;
+}
+#searchbtn
+{
+  background-color: #008CBA; 
+  border: light grey;
+  border-radius: 6px;
+  color: solid black;
+  width:30%;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight:bold;
+}
+.searchdiv
+{
+  display:block;
+  padding-top:30px;
+  margin:0px;
+
+}
+.flight_top_btns, .car_top_btn 
+{
+    display: block;
+    padding-bottom: 30px;
+    margin-bottom: 5px;
+}
+
+.flighttopbtns,.cartopbtns
+{
+border: thin black;
+border-radius: 6px;
+padding: 10px;
+margin: 0px;
+font-weight: bold;
+background-color: white;
+}
+.cartopbtns:hover
+{
+    color: #008CBA;
+    background-color: lightgray;
+}
+.flighttopbtns:hover
+{
+    color: #008CBA;
+    background-color: lightgray;
+}
+
+#where
+{   width: 400px;
+    position: absolute;
+    top: 250px;
+    left: 100px;
+    background-color: #cecece;
+}
+.going_to_hidnctnt
+{
+display: flex;
+flex-direction: row;
+}
+.going_to_hidnctnt > input
+{
+    width: 100%;
+    margin-left: 0px;
+}
+.going_to_hidnctnt > button
+{ padding: 5px;
+    margin: 0px;
+}
+#checkin
+{
+    width: 400px;
+    position: absolute;
+    top: 250px;
+    left: 300px;
+    background-color: #cecece;  
+}
+#checkout
+{
+    width: 400px;
+    position: absolute;
+    top: 250px;
+    left: 500px;
+    background-color: #cecece;   
+}
+#travellers
+{
+    width: 400px;
+    position: absolute;
+    top: 250px;
+    left: 800px;
+    background-color: #cecece;
+}
+a{
+  text-decoration: none;
+  color: white;
 }

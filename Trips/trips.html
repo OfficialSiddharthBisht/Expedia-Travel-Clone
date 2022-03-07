@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trips</title>
+    <link rel="stylesheet" href="/Trips/trip.css" />
+    <link rel="stylesheet" href="/styles/footerStyle.css">
+    <link rel="stylesheet" href="/styles/navbarstyle.css">
+  </head>
+
+  <body>
+    <header id = "header"></header>
+    <div id="trip_container">
+      <h1>Trips</h1>
+      <div id="lock">
+        <img
+          src="https://a.travel-assets.com/egds/illustrations/uds-default/unlock__large.svg"
+          alt=""
+        />
+      </div>
+      <a href="/sign in/signin.html">
+        <button id="sign_btn">Sign in or create free account</button>
+      </a>
+      
+      <div id="inp">
+       
+          <div>
+            <p>Want to see a booking without signing in?</p>
+            <p class="p">Use an itinerary number to access it</p>
+          </div>
+
+          <div>
+            <img
+              class="logo"
+              src="https://i.stack.imgur.com/fMhGv.png"
+              alt=""
+            />
+          </div>
+        
+      </div>
+    </div>
+
+    <div id = "five">
+      <div id = "img5-1">
+          <img class = "img5"src = "https://a.travel-assets.com/mad-service/header/takeover/expedia_marquee_refresh.jpg"/>
+      </div>
+      <div id = "five-2">   
+          <div>
+              <div id = "text1">
+                  <h1>Plan your trip in a snap on the app</h1>
+                  <p>From home or hammock, organise your entire escape and explore app offers</p>    
+                  
+              </div>
+
+                  
+              <div id="box">
+                  <h2>Text yourself a download link</h2>
+
+                  <select class = "btn2" name= "country code">
+                          <option value = "India +91">India +91</option>
+                  </select>
+                  <input class = "btn2-1" type ="text" placeholder= "Phone number"/>
+                  <button class = "btn2-2">Get the app</button>
+              </div>
+
+                  <p id = "consent" >By providing your number, you agree to receive a one-time automated text message with a link to get the app. Standard text message rates may apply.</p>
+          </div>
+
+              <div id = "qrcode1">
+                  <img class = "qrcode" src = "https://a.travel-assets.com/mad-service/qr-code/footer_qr/27_QR_FOOTER.png"/>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <footer class = "footer" id = "footer"></footer>
+  </body>
+</html>
+<script type="module">
+  import footer from "/components/footerModule.js";
+ let x = document.getElementById("footer");
+ x.innerHTML = footer();
+
+ import navbar from "/components/navbar.js";
+ let header = document.getElementById("header");
+ header.innerHTML = navbar();
+
+ function Signin(){
+    window.location.href = "./sign_in.html";
+  }
+</script>
