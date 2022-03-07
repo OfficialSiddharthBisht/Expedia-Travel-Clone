@@ -9,3 +9,5 @@ Team Members : -
 3 - Rahul Pandey ,
 
 4 - Srijeet S Kumar
+
+We have developed the entire project in just a week and it is similar to the actual website but not exactly similar .
