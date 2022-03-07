@@ -15,21 +15,21 @@
     </nav>
     <div class="signup-box">
         <h1>Sign in</h1>
-        <form>
+        <form id ="form2" onsubmit="loginFunc()">
             <div id="floatContainer" class="float-container">
                 <label>Email address</label>
-                <input class="input" type="email" data-placeholder="Email address">
+                <input class="input" type="email" data-placeholder="Email address" id="email">
             </div>
             <div id="floatContainer" class="float-container">
                 <label>Password</label>
-                <input class="input" type="password" data-placeholder="Password">
+                <input class="input" type="password" data-placeholder="Password" id="password">
             </div>
             <div id="top">
                 <input type="checkbox" id="public" name="public">
                 <label for="public">This is a public or shared device</label>
               </div>
             <p>By creating an account, I agree to the Expedia <a href="#">Terms and Conditions</a>, <a href="#">Privacy Statement</a>  and <a href="#">Expedia Rewards Terms and Conditions</a>.</p>
-            <input type="button" value="Continue" class="button"> 
+            <button type="submit" form="form2" value="Submit" disabled>Continue</button>
         </form>
         <p class="para-2">Don't have an account? <a href="createacc.html">Create one</a></p>
         <p class="para-3">or continue with</p>

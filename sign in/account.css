@@ -18,7 +18,7 @@ nav{
     border-left: none;
     border-right: none;
 }
-.signup-box{
+.signup-box, #welcome{
     width: 350px;
     height: 620px;
     margin: auto;
@@ -37,7 +37,7 @@ form{
     width: 400px;
     margin-left: 20px;
 }
-input[type="button"]{
+button{
     width: 400px;
     height: 35px;
     margin-top: 20px;

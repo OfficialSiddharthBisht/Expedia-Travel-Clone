@@ -3,7 +3,7 @@ function navbar(){
     <nav>
     <ul>
         <div id="left">
-            <li><a href="index.html">
+            <li><a href="/index.html">
                 <img src="https://www.expedia.co.in/_dms/header/logo.svg?locale=en_GB&siteid=27&2" alt="" id="logo">
             </a></li>
 
@@ -23,8 +23,8 @@ function navbar(){
         <div class="items">
             <li><a href="">English</a></li>
             <li><a href="">Support</a></li>
-            <li><a href="">Trips</a></li>
-            <li><a href="./sign in/signin.html">Sign in</a></li>
+            <li><a href="/Trips/trips.html">Trips</a></li>
+            <li><a href="/sign in/createacc.html" id="signin">Sign in</a></li>
         </div>
     </ul>
 </nav>
