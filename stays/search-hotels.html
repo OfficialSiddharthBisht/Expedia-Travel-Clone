@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search-hotels</title>
+     <link rel="stylesheet" 
+          href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/styles/navbarstyle.css">
+<link rel="stylesheet" href="/styles/footerStyle.css">
+
+<style>
+
+    body{
+        background:whitesmoke;
+    }
+    #popup{
+        width:500px;
+        height:600px;
+        border: 1px solid #cecece;
+        background:white;
+        display:none;
+
+    }
+    #popup > div{
+        flex-direction:column;
+        text-align: left;
+    }
+    #one > div{
+        display:flex;
+        flex-direction:column;
+        align-items: flex-start;
+       
+    }
+
+   .idecrease{
+        display:flex;
+        justify-content: space-between;
+        
+   }
+
+   #cross{
+        padding: 6px;
+        background:none;
+        border: none;
+
+   }
+   #travel{
+        border-bottom: 1px solid grey;
+        padding:8px;
+   }
+   .idb{
+        width:30px;
+        height:30px;
+        border-radius:50%;     
+    }
+    #search1{
+        padding:10px 0;
+        width: 10%;
+        height: 40px;
+        background:blue;
+        color: white;
+        border-radius: 0.5rem;
+       
+    } 
+    .ipt1{
+        /* padding:8px 25px; */
+        width: 10%;
+        height: 40px;
+        margin: 20px 10px 0 0;
+        border-radius: 0.5rem;
+        
+
+
+    }
+    #inputcity{
+        padding: 12px 25px;
+        width:15%;
+        height:40x;
+        border-radius: 0.5rem;
+        margin: 20px 10px 0 0;
+    
+    }
+     #two{
+        text-align: right;
+        margin: 15px 80px 40px 0;
+    }
+
+  #container{
+    display :grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap:15px;
+    width: 60%;
+    margin: 0 0 0 150px; 
+    
+
+  }
+  #container > div{
+    display:flex;
+    flex-direction:row;
+   
+    align-items:flex-start;
+    justify-content: space-around;
+   
+  }
+  #search{
+    margin: 0 0 0 200px;
+  }
+
+  img{
+        width: 200px;
+        height: 200px;
+  }
+  #filter{
+    float:left;
+    margin: 0 0 0 30px;
+  }
+  #sort{
+      padding: 10px 30px;
+      border-radius: 0.5rem;
+      background:white;
+
+  }
+</style>
+</head>
+<body>
+
+    <header class="header" id="header">
+
+    </header>
+
+    <div id = "search">
+      
+        <input type = "text" id = "inputcity" placeholder="Going to">
+        <input class = "ipt1" type = "date" placeholder = "check in"> 
+        <input class = "ipt1"  type = "date" placeholder = "check out">
+        <input  class = "ipt1"  type = "text" placeholder= "Travellers">
+        <button id = "search1" onclick = "search()">Search</button>
+        
+        
+        <div id = "popup">
+           
+            <div id = "travel"> <button id = "cross">☓</button> Travellers </div>
+
+            <div id = "one">
+                    
+                <div class  = "two">
+                    <p>Room 1</p>
+                    
+                    <p>Adults</p>
+        
+                    <p>Children (Age 0-17)</p>
+
+                </div>
+
+                <div  class  = "two" >
+                    <div class = "idecrease">
+                        <button class = "idb"onclick = "increment1()">+</button>
+
+                        <h2 id = "counting1"></h2>
+
+                        <button class = "idb" onclick = "decrement1()">-</button>
+                    </div>
+                            <br/>
+                    <div class = "idecrease" >
+                        <button class = "idb" onclick = "increment2()">+</button>
+
+                        <h2 id = "counting2"></h2>
+
+                        <button class = "idb"  onclick = "decrement2()">-</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div> Done </div>
+
+        </div>
+       
+    </div>
+
+    <div id = "two">
+        <select id = "sort" placeholder = "sort by">
+
+            
+            <option value = "Recommended"  placeholder = "sort by" selected>Recommended</option>
+            <option  value = "Recommended">Price</option>
+            <option  value = "Recommended">Distance from city</option>
+            <option  value = "Recommended">Guest rating + our choices </option>
+            <option  value = "Recommended">Price + choices</option>
+            <option  value = "Recommended">Property Class</option>
+
+        </select>
+
+    
+    </div>
+
+    <div id = "filter">
+
+            <h2>Filter by</h2>
+            <br>
+
+            <h3>Your Budget</h3>
+            
+            <input type= "checkbox" value = "Less than Rs 2000" />
+            <label>Less than Rs 2000</label>
+
+            <br>
+
+            <input type= "checkbox"  />
+            <label>Rs2,000 to Rs4,000</label>
+            
+
+            <br>
+
+            <input type= "checkbox"  />
+            <label>
+                Rs4,000 to Rs8,000</label>
+
+            <br>
+            <input type= "checkbox"  />
+            <label>Rs8,000 to Rs11,000</label>
+
+            <br>
+
+            <input type= "checkbox"  />
+            <label>Greater than Rs11,000</label>
+
+            <br/>
+            <br/>
+                
+            <h3>Guest rating</h3>
+            
+            <input type= "radio"  />
+            <label>Any</label>
+
+            <br>
+
+          
+            <input type= "radio"  />
+            <label>Wonderfull 4.5+</label>
+            
+
+            <br>
+
+           
+            <input type= "radio"  />
+            <label> Very good 4+</label>
+               
+
+            <br>
+          
+            <input type= "radio"  />
+            <label>Good 3.5+</label>
+
+            <br>
+
+            <h3>Payment Type</h3>
+            
+            <input type= "checkbox" value = "Less than Rs 2000" />
+            <label>Fully refundable</label>
+
+            <br>
+
+            <input type= "checkbox"  />
+            <label>Reserve now, Pay later</label>
+            
+
+            <br>
+
+            <h3>Property Type</h3>
+            
+            <input type= "checkbox" value = "Less than Rs 2000" />
+            <label>Condominium resort</label>
+
+            <br>
+
+            <input type= "checkbox"  />
+            <label>
+                Bed & breakfast</label>
+            
+
+            <br>
+
+            <input type= "checkbox"  />
+            <label> Condo
+
+                </label>
+
+            <br>
+            <input type= "checkbox"  />
+            <label>Villa</label>
+
+            <br>
+
+            <input type= "checkbox"  />
+            <label>Residence</label>
+
+            <br/>
+            
+            <input type= "checkbox"  />
+            <label>Hotel</label>
+
+            <br/>
+            
+            <input type= "checkbox"  />
+            <label>Palace</label>
+
+            <br/>
+            <input type= "checkbox"  />
+            <label>Capsule Hotel</label>
+
+            <br/>
+            
+
+
+
+    </div>
+
+    <div id = "container"></div>
+    <br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br> <br><br><b></b> <br><br><br><br>
+    <footer class="footer" id="footer">
+
+    </footer>
+        <script type = "module">  
+        import footer from "/components/footerModule.js";
+        let x = document.getElementById("footer");
+        x.innerHTML = footer();
+
+        import navbar from "/components/navbar.js";
+        let header = document.getElementById("header");
+        header.innerHTML = navbar();
+</script>
+</div>
+</body>
+</html>
+
+
+<script>   
+
+let hotels = [
+    {
+    "id": "412c0468-3637-4563-a111-6cc49c271d16",
+    "name": "Hotel Taj",
+    "country": "India",
+    "city": "mumbai",
+    "price": 340,
+    "images": [
+    "https://media.gettyimages.com/photos/the-taj-mahal-palace-hotel-at-dusk-picture-id520443060?k=20&m=520443060&s=612x612&w=0&h=PaGOxrU9P1yUCXeFGrPFkkcXl7aLdOAG2pzpqPDJl6g=",
+    "https://media.gettyimages.com/photos/taj-mahal-hotel-bombay-picture-id521916998?k=20&m=521916998&s=612x612&w=0&h=COz7tCsUbUVDXefmtMON3sKMsDYq7o0XORWmfDKO7-M=",
+    "https://media.gettyimages.com/photos/the-taj-mahal-palace-hotel-picture-id989771498?k=20&m=989771498&s=612x612&w=0&h=rKnbobhJte0htD8rGUGFLErOD3eD4BcRk8azGzqaFG8=",
+    "https://media.gettyimages.com/photos/diners-enjoying-their-meals-at-machan-coffee-shop-taj-mahal-hotel-new-picture-id90565443?k=20&m=90565443&s=612x612&w=0&h=3RXZseNan-PdYBHUHNl-vrE1gQDwpHRELqovuq5FWcI=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-07-08T23:13:40.977Z",
+    "stars": 3,
+    "rating": 1.2260803038065373,
+    "description": "Amet quas voluptas. Cum excepturi voluptatem alias eos eaque eveniet. Quae at ipsam excepturi reprehenderit. Quisquam consequatur et possimus aspernatur omnis velit facere pariatur."
+    },
+    {
+    "id": "412c0468-3637-4563-a111-6cc49c271d16",
+    "name": "Hotel Pramod",
+    "country": "India",
+    "city": "mumbai",
+    "price": 340,
+    "images": [
+   
+    "https://media.gettyimages.com/photos/taj-mahal-hotel-bombay-picture-id521916998?k=20&m=521916998&s=612x612&w=0&h=COz7tCsUbUVDXefmtMON3sKMsDYq7o0XORWmfDKO7-M=",
+    "https://media.gettyimages.com/photos/the-taj-mahal-palace-hotel-picture-id989771498?k=20&m=989771498&s=612x612&w=0&h=rKnbobhJte0htD8rGUGFLErOD3eD4BcRk8azGzqaFG8=",
+    "https://media.gettyimages.com/photos/diners-enjoying-their-meals-at-machan-coffee-shop-taj-mahal-hotel-new-picture-id90565443?k=20&m=90565443&s=612x612&w=0&h=3RXZseNan-PdYBHUHNl-vrE1gQDwpHRELqovuq5FWcI=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-07-08T23:13:40.977Z",
+    "stars": 3,
+    "rating": 1.2260803038065373,
+    "description": "Amet quas voluptas. Cum excepturi voluptatem alias eos eaque eveniet. Quae at ipsam excepturi reprehenderit. Quisquam consequatur et possimus aspernatur omnis velit facere pariatur."
+    },
+    {
+    "id": "412c0468-3637-4563-a111-6cc49c271d16",
+    "name": "Hotel kaveri",
+    "country": "India",
+    "city": "mumbai",
+    "price": 340,
+    "images": [
+    
+    "https://media.gettyimages.com/photos/the-taj-mahal-palace-hotel-picture-id989771498?k=20&m=989771498&s=612x612&w=0&h=rKnbobhJte0htD8rGUGFLErOD3eD4BcRk8azGzqaFG8=",
+    "https://media.gettyimages.com/photos/diners-enjoying-their-meals-at-machan-coffee-shop-taj-mahal-hotel-new-picture-id90565443?k=20&m=90565443&s=612x612&w=0&h=3RXZseNan-PdYBHUHNl-vrE1gQDwpHRELqovuq5FWcI=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-07-08T23:13:40.977Z",
+    "stars": 3,
+    "rating": 1.2260803038065373,
+    "description": "Amet quas voluptas. Cum excepturi voluptatem alias eos eaque eveniet. Quae at ipsam excepturi reprehenderit. Quisquam consequatur et possimus aspernatur omnis velit facere pariatur."
+    },
+    {
+    "id": "412c0468-3637-4563-a111-6cc49c271d16",
+    "name": "Hotel Raj",
+    "country": "India",
+    "city": "mumbai",
+    "price": 340,
+    "images": [
+   
+
+    "https://media.gettyimages.com/photos/the-taj-mahal-palace-hotel-picture-id989771498?k=20&m=989771498&s=612x612&w=0&h=rKnbobhJte0htD8rGUGFLErOD3eD4BcRk8azGzqaFG8=",
+    "https://media.gettyimages.com/photos/diners-enjoying-their-meals-at-machan-coffee-shop-taj-mahal-hotel-new-picture-id90565443?k=20&m=90565443&s=612x612&w=0&h=3RXZseNan-PdYBHUHNl-vrE1gQDwpHRELqovuq5FWcI=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-07-08T23:13:40.977Z",
+    "stars": 3,
+    "rating": 1.2260803038065373,
+    "description": "Amet quas voluptas. Cum excepturi voluptatem alias eos eaque eveniet. Quae at ipsam excepturi reprehenderit. Quisquam consequatur et possimus aspernatur omnis velit facere pariatur."
+    },
+    {
+    "id": "412c0468-3637-4563-a111-6cc49c271d16",
+    "name": "Hotel leela palace",
+    "country": "India",
+    "city": "mumbai",
+    "price": 340,
+    "images": [
+    
+    
+    "https://media.gettyimages.com/photos/the-taj-mahal-palace-hotel-picture-id989771498?k=20&m=989771498&s=612x612&w=0&h=rKnbobhJte0htD8rGUGFLErOD3eD4BcRk8azGzqaFG8=",
+    "https://media.gettyimages.com/photos/diners-enjoying-their-meals-at-machan-coffee-shop-taj-mahal-hotel-new-picture-id90565443?k=20&m=90565443&s=612x612&w=0&h=3RXZseNan-PdYBHUHNl-vrE1gQDwpHRELqovuq5FWcI=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-07-08T23:13:40.977Z",
+    "stars": 3,
+    "rating": 1.2260803038065373,
+    "description": "Amet quas voluptas. Cum excepturi voluptatem alias eos eaque eveniet. Quae at ipsam excepturi reprehenderit. Quisquam consequatur et possimus aspernatur omnis velit facere pariatur."
+    },
+    {
+    "id": "412c0468-3637-4563-a111-6cc49c271d16",
+    "name": "Hotel dhanalakshmi",
+    "country": "India",
+    "city": "mumbai",
+    "price": 340,
+    "images": [
+   
+    "https://media.gettyimages.com/photos/taj-mahal-hotel-bombay-picture-id521916998?k=20&m=521916998&s=612x612&w=0&h=COz7tCsUbUVDXefmtMON3sKMsDYq7o0XORWmfDKO7-M=",
+    "https://media.gettyimages.com/photos/the-taj-mahal-palace-hotel-picture-id989771498?k=20&m=989771498&s=612x612&w=0&h=rKnbobhJte0htD8rGUGFLErOD3eD4BcRk8azGzqaFG8=",
+    "https://media.gettyimages.com/photos/diners-enjoying-their-meals-at-machan-coffee-shop-taj-mahal-hotel-new-picture-id90565443?k=20&m=90565443&s=612x612&w=0&h=3RXZseNan-PdYBHUHNl-vrE1gQDwpHRELqovuq5FWcI=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-07-08T23:13:40.977Z",
+    "stars": 3,
+    "rating": 1.2260803038065373,
+    "description": "Amet quas voluptas. Cum excepturi voluptatem alias eos eaque eveniet. Quae at ipsam excepturi reprehenderit. Quisquam consequatur et possimus aspernatur omnis velit facere pariatur."
+    },
+    {
+    "id": "8e1ae5ca-5032-406c-958a-785c3b811d03",
+    "name": "Hotel Noor Fatai",
+    "country": "United States Minor Outlying Islands",
+    "city": "Bengaluru",
+    "price": 661,
+    "images": [
+    "https://media.gettyimages.com/photos/luxury-construction-hotel-with-swimming-pool-at-sunset-picture-id903417402?k=20&m=903417402&s=612x612&w=0&h=a73RID4dpoONgEimlAbtupptZOkGb_ibZ0H5HoJj1iE=",
+    "https://media.gettyimages.com/photos/indian-concierge-welcome-guest-at-hotel-entrance-agra-india-picture-id669319514?k=20&m=669319514&s=612x612&w=0&h=XQ_tVieZ1r4lKXdt3UqGzz35pUie14JOlqKtipjA0bM=",
+    "https://media.gettyimages.com/photos/lobby-entrance-with-reception-desk-and-lounge-area-picture-id907633960?k=20&m=907633960&s=612x612&w=0&h=DzP2NB7nFfuFLuE4Ox3Lnp01y5MOneaaJYmGeYZdaIg=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-10-17T04:39:29.370Z",
+    "stars": 3,
+    "rating": 2.5725330158543622,
+    "description": "Ullam autem aut rerum consequatur itaque quo ullam sit. Aut dolor consectetur harum voluptatibus tempora ullam eos suscipit. Aut blanditiis possimus vero. Repellat commodi reprehenderit libero esse sed."
+    },
+    {
+    "id": "09679868-7e85-4e80-b715-999f14c32602",
+    "name": "Hotel Everest",
+    "country": "Lao People's Democratic Republic",
+    "city": "mumbai",
+    "price": 994,
+    "images": [
+    "https://media.gettyimages.com/photos/modern-lounge-chairs-next-to-swimming-pool-picture-id109350324?k=20&m=109350324&s=612x612&w=0&h=I_ZazVVVskz63pcaQHpcuLZAEn-RxLI3sJGrVBKh_3c=",
+    "https://media.gettyimages.com/photos/udaipur-city-palace-picture-id1200756095?k=20&m=1200756095&s=612x612&w=0&h=KcI-4tO4g2RmkJXfwGtuGWeK047zMdXFJKvRJcDaAUI=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-11-04T09:33:41.660Z",
+    "stars": 5,
+    "rating": 3.0452429245509407,
+    "description": "Officiis perspiciatis voluptatem porro at voluptas. Animi et corporis porro incidunt quisquam libero enim corrupti. Nesciunt sed ea aliquam laboriosam natus exercitationem ullam possimus minus. Rerum quo qui facere. Pariatur excepturi odit id nam dolores dolorem laboriosam dicta aut. Neque aut sit sed repellendus sit et."
+    },
+    {
+    "id": "65bf93af-cf40-400c-afaf-0887528aaa97",
+    "name": "Oborey Hotel",
+    "country": "Latvia",
+    "city": "delhi",
+    "price": 155,
+    "images": [
+    "https://media.gettyimages.com/photos/mid-adult-couple-walking-next-to-swimming-pool-on-vacation-picture-id650467668?k=20&m=650467668&s=612x612&w=0&h=Q7YK31sIChgDJVwrp0TIukO3qWPJ0y7akxTalJQVxp8=",
+    "https://media.gettyimages.com/photos/sunrise-over-the-deluxe-rooms-with-semi-private-pool-at-the-ultra-picture-id128115553?k=20&m=128115553&s=612x612&w=0&h=CZ90vift0JGjr6DJWp99hID4uAKLkL13q9j7_qsxnWI="
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-05-03T16:02:52.414Z",
+    "stars": 3,
+    "rating": 2.2555867888016015,
+    "description": "Ut dolor vel. Unde similique voluptatem nisi. Omnis ut vero et inventore molestias delectus illo voluptas libero. Temporibus sint in sapiente ex ipsa illo ut aut deserunt. Ipsam unde aspernatur magnam soluta commodi ratione corrupti. Autem enim nihil dolores."
+    },
+
+    {
+    "id": "412c0468-3637-4563-a111-6cc49c271d16",
+    "name": "Hotel Taj",
+    "country": "India",
+    "city": "delhi",
+    "price": 340,
+    "images": [
+    "https://media.gettyimages.com/photos/the-taj-mahal-palace-hotel-at-dusk-picture-id520443060?k=20&m=520443060&s=612x612&w=0&h=PaGOxrU9P1yUCXeFGrPFkkcXl7aLdOAG2pzpqPDJl6g=",
+    "https://media.gettyimages.com/photos/taj-mahal-hotel-bombay-picture-id521916998?k=20&m=521916998&s=612x612&w=0&h=COz7tCsUbUVDXefmtMON3sKMsDYq7o0XORWmfDKO7-M=",
+    "https://media.gettyimages.com/photos/the-taj-mahal-palace-hotel-picture-id989771498?k=20&m=989771498&s=612x612&w=0&h=rKnbobhJte0htD8rGUGFLErOD3eD4BcRk8azGzqaFG8=",
+    "https://media.gettyimages.com/photos/diners-enjoying-their-meals-at-machan-coffee-shop-taj-mahal-hotel-new-picture-id90565443?k=20&m=90565443&s=612x612&w=0&h=3RXZseNan-PdYBHUHNl-vrE1gQDwpHRELqovuq5FWcI=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-07-08T23:13:40.977Z",
+    "stars": 3,
+    "rating": 1.2260803038065373,
+    "description": "Amet quas voluptas. Cum excepturi voluptatem alias eos eaque eveniet. Quae at ipsam excepturi reprehenderit. Quisquam consequatur et possimus aspernatur omnis velit facere pariatur."
+    },
+    {
+    "id": "8e1ae5ca-5032-406c-958a-785c3b811d03",
+    "name": "Hotel Noor Fatai",
+    "country": "United States Minor Outlying Islands",
+    "city": "chennai",
+    "price": 661,
+    "images": [
+    "https://media.gettyimages.com/photos/luxury-construction-hotel-with-swimming-pool-at-sunset-picture-id903417402?k=20&m=903417402&s=612x612&w=0&h=a73RID4dpoONgEimlAbtupptZOkGb_ibZ0H5HoJj1iE=",
+    "https://media.gettyimages.com/photos/indian-concierge-welcome-guest-at-hotel-entrance-agra-india-picture-id669319514?k=20&m=669319514&s=612x612&w=0&h=XQ_tVieZ1r4lKXdt3UqGzz35pUie14JOlqKtipjA0bM=",
+    "https://media.gettyimages.com/photos/lobby-entrance-with-reception-desk-and-lounge-area-picture-id907633960?k=20&m=907633960&s=612x612&w=0&h=DzP2NB7nFfuFLuE4Ox3Lnp01y5MOneaaJYmGeYZdaIg=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-10-17T04:39:29.370Z",
+    "stars": 3,
+    "rating": 2.5725330158543622,
+    "description": "Ullam autem aut rerum consequatur itaque quo ullam sit. Aut dolor consectetur harum voluptatibus tempora ullam eos suscipit. Aut blanditiis possimus vero. Repellat commodi reprehenderit libero esse sed."
+    },
+    {
+    "id": "09679868-7e85-4e80-b715-999f14c32602",
+    "name": "Hotel Everest",
+    "country": "Lao People's Democratic Republic",
+    "city": "mumbai",
+    "price": 994,
+    "images": [
+    "https://media.gettyimages.com/photos/modern-lounge-chairs-next-to-swimming-pool-picture-id109350324?k=20&m=109350324&s=612x612&w=0&h=I_ZazVVVskz63pcaQHpcuLZAEn-RxLI3sJGrVBKh_3c=",
+    "https://media.gettyimages.com/photos/udaipur-city-palace-picture-id1200756095?k=20&m=1200756095&s=612x612&w=0&h=KcI-4tO4g2RmkJXfwGtuGWeK047zMdXFJKvRJcDaAUI=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-11-04T09:33:41.660Z",
+    "stars": 5,
+    "rating": 3.0452429245509407,
+    "description": "Officiis perspiciatis voluptatem porro at voluptas. Animi et corporis porro incidunt quisquam libero enim corrupti. Nesciunt sed ea aliquam laboriosam natus exercitationem ullam possimus minus. Rerum quo qui facere. Pariatur excepturi odit id nam dolores dolorem laboriosam dicta aut. Neque aut sit sed repellendus sit et."
+    },
+    {
+    "id": "65bf93af-cf40-400c-afaf-0887528aaa97",
+    "name": "Oborey Hotel",
+    "country": "Latvia",
+    "city": "Benggaluru",
+    "price": 155,
+    "images": [
+    "https://media.gettyimages.com/photos/mid-adult-couple-walking-next-to-swimming-pool-on-vacation-picture-id650467668?k=20&m=650467668&s=612x612&w=0&h=Q7YK31sIChgDJVwrp0TIukO3qWPJ0y7akxTalJQVxp8=",
+    "https://media.gettyimages.com/photos/sunrise-over-the-deluxe-rooms-with-semi-private-pool-at-the-ultra-picture-id128115553?k=20&m=128115553&s=612x612&w=0&h=CZ90vift0JGjr6DJWp99hID4uAKLkL13q9j7_qsxnWI="
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-05-03T16:02:52.414Z",
+    "stars": 3,
+    "rating": 2.2555867888016015,
+    "description": "Ut dolor vel. Unde similique voluptatem nisi. Omnis ut vero et inventore molestias delectus illo voluptas libero. Temporibus sint in sapiente ex ipsa illo ut aut deserunt. Ipsam unde aspernatur magnam soluta commodi ratione corrupti. Autem enim nihil dolores."
+    },
+    {
+    "id": "412c0468-3637-4563-a111-6cc49c271d16",
+    "name": "Hotel Gaj",
+    "country": "India",
+    "city": "Bengaluru",
+    "price": 340,
+    "images": [
+    "https://media.gettyimages.com/photos/the-taj-mahal-palace-hotel-at-dusk-picture-id520443060?k=20&m=520443060&s=612x612&w=0&h=PaGOxrU9P1yUCXeFGrPFkkcXl7aLdOAG2pzpqPDJl6g=",
+    "https://media.gettyimages.com/photos/taj-mahal-hotel-bombay-picture-id521916998?k=20&m=521916998&s=612x612&w=0&h=COz7tCsUbUVDXefmtMON3sKMsDYq7o0XORWmfDKO7-M=",
+    "https://media.gettyimages.com/photos/the-taj-mahal-palace-hotel-picture-id989771498?k=20&m=989771498&s=612x612&w=0&h=rKnbobhJte0htD8rGUGFLErOD3eD4BcRk8azGzqaFG8=",
+    "https://media.gettyimages.com/photos/diners-enjoying-their-meals-at-machan-coffee-shop-taj-mahal-hotel-new-picture-id90565443?k=20&m=90565443&s=612x612&w=0&h=3RXZseNan-PdYBHUHNl-vrE1gQDwpHRELqovuq5FWcI=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-07-08T23:13:40.977Z",
+    "stars": 3,
+    "rating": 1.2260803038065373,
+    "description": "Amet quas voluptas. Cum excepturi voluptatem alias eos eaque eveniet. Quae at ipsam excepturi reprehenderit. Quisquam consequatur et possimus aspernatur omnis velit facere pariatur."
+    },
+    {
+    "id": "8e1ae5ca-5032-406c-958a-785c3b811d03",
+    "name": "Hotel Leela palace",
+    "country": "United States Minor Outlying Islands",
+    "city": "mumbai",
+    "price": 661,
+    "images": [
+    "https://media.gettyimages.com/photos/luxury-construction-hotel-with-swimming-pool-at-sunset-picture-id903417402?k=20&m=903417402&s=612x612&w=0&h=a73RID4dpoONgEimlAbtupptZOkGb_ibZ0H5HoJj1iE=",
+    "https://media.gettyimages.com/photos/indian-concierge-welcome-guest-at-hotel-entrance-agra-india-picture-id669319514?k=20&m=669319514&s=612x612&w=0&h=XQ_tVieZ1r4lKXdt3UqGzz35pUie14JOlqKtipjA0bM=",
+    "https://media.gettyimages.com/photos/lobby-entrance-with-reception-desk-and-lounge-area-picture-id907633960?k=20&m=907633960&s=612x612&w=0&h=DzP2NB7nFfuFLuE4Ox3Lnp01y5MOneaaJYmGeYZdaIg=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-10-17T04:39:29.370Z",
+    "stars": 3,
+    "rating": 2.5725330158543622,
+    "description": "Ullam autem aut rerum consequatur itaque quo ullam sit. Aut dolor consectetur harum voluptatibus tempora ullam eos suscipit. Aut blanditiis possimus vero. Repellat commodi reprehenderit libero esse sed."
+    },
+    {
+    "id": "09679868-7e85-4e80-b715-999f14c32602",
+    "name": "Hotel Everest",
+    "country": "Lao People's Democratic Republic",
+    "city": "mumbai",
+    "price": 994,
+    "images": [
+    "https://media.gettyimages.com/photos/modern-lounge-chairs-next-to-swimming-pool-picture-id109350324?k=20&m=109350324&s=612x612&w=0&h=I_ZazVVVskz63pcaQHpcuLZAEn-RxLI3sJGrVBKh_3c=",
+    "https://media.gettyimages.com/photos/udaipur-city-palace-picture-id1200756095?k=20&m=1200756095&s=612x612&w=0&h=KcI-4tO4g2RmkJXfwGtuGWeK047zMdXFJKvRJcDaAUI=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-11-04T09:33:41.660Z",
+    "stars": 5,
+    "rating": 3.0452429245509407,
+    "description": "Officiis perspiciatis voluptatem porro at voluptas. Animi et corporis porro incidunt quisquam libero enim corrupti. Nesciunt sed ea aliquam laboriosam natus exercitationem ullam possimus minus. Rerum quo qui facere. Pariatur excepturi odit id nam dolores dolorem laboriosam dicta aut. Neque aut sit sed repellendus sit et."
+    },
+    {
+    "id": "65bf93af-cf40-400c-afaf-0887528aaa97",
+    "name": "Oborey Hotel",
+    "country": "Latvia",
+    "city": "chennai",
+    "price": 155,
+    "images": [
+    "https://media.gettyimages.com/photos/mid-adult-couple-walking-next-to-swimming-pool-on-vacation-picture-id650467668?k=20&m=650467668&s=612x612&w=0&h=Q7YK31sIChgDJVwrp0TIukO3qWPJ0y7akxTalJQVxp8=",
+    "https://media.gettyimages.com/photos/sunrise-over-the-deluxe-rooms-with-semi-private-pool-at-the-ultra-picture-id128115553?k=20&m=128115553&s=612x612&w=0&h=CZ90vift0JGjr6DJWp99hID4uAKLkL13q9j7_qsxnWI="
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-05-03T16:02:52.414Z",
+    "stars": 3,
+    "rating": 2.2555867888016015,
+    "description": "Ut dolor vel. Unde similique voluptatem nisi. Omnis ut vero et inventore molestias delectus illo voluptas libero. Temporibus sint in sapiente ex ipsa illo ut aut deserunt. Ipsam unde aspernatur magnam soluta commodi ratione corrupti. Autem enim nihil dolores."
+    },
+
+    {
+    "id": "412c0468-3637-4563-a111-6cc49c271d16",
+    "name": "Hotel Taj",
+    "country": "India",
+    "city": "delhi",
+    "price": 340,
+    "images": [
+    "https://media.gettyimages.com/photos/the-taj-mahal-palace-hotel-at-dusk-picture-id520443060?k=20&m=520443060&s=612x612&w=0&h=PaGOxrU9P1yUCXeFGrPFkkcXl7aLdOAG2pzpqPDJl6g=",
+    "https://media.gettyimages.com/photos/taj-mahal-hotel-bombay-picture-id521916998?k=20&m=521916998&s=612x612&w=0&h=COz7tCsUbUVDXefmtMON3sKMsDYq7o0XORWmfDKO7-M=",
+    "https://media.gettyimages.com/photos/the-taj-mahal-palace-hotel-picture-id989771498?k=20&m=989771498&s=612x612&w=0&h=rKnbobhJte0htD8rGUGFLErOD3eD4BcRk8azGzqaFG8=",
+    "https://media.gettyimages.com/photos/diners-enjoying-their-meals-at-machan-coffee-shop-taj-mahal-hotel-new-picture-id90565443?k=20&m=90565443&s=612x612&w=0&h=3RXZseNan-PdYBHUHNl-vrE1gQDwpHRELqovuq5FWcI=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-07-08T23:13:40.977Z",
+    "stars": 3,
+    "rating": 1.2260803038065373,
+    "description": "Amet quas voluptas. Cum excepturi voluptatem alias eos eaque eveniet. Quae at ipsam excepturi reprehenderit. Quisquam consequatur et possimus aspernatur omnis velit facere pariatur."
+    },
+    {
+    "id": "8e1ae5ca-5032-406c-958a-785c3b811d03",
+    "name": "Hotel Noor Fatai",
+    "country": "United States Minor Outlying Islands",
+    "city": "mumbai",
+    "price": 661,
+    "images": [
+    "https://media.gettyimages.com/photos/luxury-construction-hotel-with-swimming-pool-at-sunset-picture-id903417402?k=20&m=903417402&s=612x612&w=0&h=a73RID4dpoONgEimlAbtupptZOkGb_ibZ0H5HoJj1iE=",
+    "https://media.gettyimages.com/photos/indian-concierge-welcome-guest-at-hotel-entrance-agra-india-picture-id669319514?k=20&m=669319514&s=612x612&w=0&h=XQ_tVieZ1r4lKXdt3UqGzz35pUie14JOlqKtipjA0bM=",
+    "https://media.gettyimages.com/photos/lobby-entrance-with-reception-desk-and-lounge-area-picture-id907633960?k=20&m=907633960&s=612x612&w=0&h=DzP2NB7nFfuFLuE4Ox3Lnp01y5MOneaaJYmGeYZdaIg=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-10-17T04:39:29.370Z",
+    "stars": 3,
+    "rating": 2.5725330158543622,
+    "description": "Ullam autem aut rerum consequatur itaque quo ullam sit. Aut dolor consectetur harum voluptatibus tempora ullam eos suscipit. Aut blanditiis possimus vero. Repellat commodi reprehenderit libero esse sed."
+    },
+    {
+    "id": "09679868-7e85-4e80-b715-999f14c32602",
+    "name": "Hotel Everest",
+    "country": "Lao People's Democratic Republic",
+    "city": "mumbai",
+    "price": 994,
+    "images": [
+    "https://media.gettyimages.com/photos/modern-lounge-chairs-next-to-swimming-pool-picture-id109350324?k=20&m=109350324&s=612x612&w=0&h=I_ZazVVVskz63pcaQHpcuLZAEn-RxLI3sJGrVBKh_3c=",
+    "https://media.gettyimages.com/photos/udaipur-city-palace-picture-id1200756095?k=20&m=1200756095&s=612x612&w=0&h=KcI-4tO4g2RmkJXfwGtuGWeK047zMdXFJKvRJcDaAUI=",
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-11-04T09:33:41.660Z",
+    "stars": 5,
+    "rating": 3.0452429245509407,
+    "description": "Officiis perspiciatis voluptatem porro at voluptas. Animi et corporis porro incidunt quisquam libero enim corrupti. Nesciunt sed ea aliquam laboriosam natus exercitationem ullam possimus minus. Rerum quo qui facere. Pariatur excepturi odit id nam dolores dolorem laboriosam dicta aut. Neque aut sit sed repellendus sit et."
+    },
+    {
+    "id": "65bf93af-cf40-400c-afaf-0887528aaa97",
+    "name": "Oborey Hotel",
+    "country": "Latvia",
+    "city": "Delhi",
+    "price": 155,
+    "images": [
+    "https://media.gettyimages.com/photos/mid-adult-couple-walking-next-to-swimming-pool-on-vacation-picture-id650467668?k=20&m=650467668&s=612x612&w=0&h=Q7YK31sIChgDJVwrp0TIukO3qWPJ0y7akxTalJQVxp8=",
+    "https://media.gettyimages.com/photos/sunrise-over-the-deluxe-rooms-with-semi-private-pool-at-the-ultra-picture-id128115553?k=20&m=128115553&s=612x612&w=0&h=CZ90vift0JGjr6DJWp99hID4uAKLkL13q9j7_qsxnWI="
+    ],
+    "date_start": "2022-02-28T19:21:49.720Z",
+    "date_end": "2022-05-03T16:02:52.414Z",
+    "stars": 3,
+    "rating": 4.2555867888016015,
+    "description": "Ut dolor vel. Unde similique voluptatem nisi. Omnis ut vero et inventore molestias delectus illo voluptas libero. Temporibus sint in sapiente ex ipsa illo ut aut deserunt. Ipsam unde aspernatur magnam soluta commodi ratione corrupti. Autem enim nihil dolores."
+    },
+
+
+]
+
+let data1 = 0
+document.getElementById("counting1").innerText = data1
+
+function increment1(){
+        data1 = data1 + 1
+        document.getElementById("counting1").innerText = data1
+       
+}
+
+function decrement1(){
+        data1 = data1 - 1
+        document.getElementById("counting1").innerText = data1
+     
+}
+let data2 = 0
+document.getElementById("counting2").innerText = data2
+function increment2(){
+        data2 = data2 + 1
+        document.getElementById("counting2").innerText = data2
+       
+}
+
+function decrement2(){
+        data2 = data2- 1
+        document.getElementById("counting2").innerText = data2
+     
+}
+
+
+
+function search(){
+    let input = document.getElementById("inputcity").value 
+    let container = document.getElementById("container")
+    container.innerHTML = ""
+    for (let i = 0; i < hotels.length; i++){
+        if (input == hotels[i].city){
+            displayData(hotels[i])
+        }
+       
+}
+}
+
+let container = document.getElementById("container")
+const displayData = (hotel) =>{
+
+   
+  
+    let imgdiv = document.createElement("div")
+
+    let image = document.createElement("img")
+    image.src =  hotel.images[0]
+    
+    imgdiv.append(image)
+    
+    let datadiv = document.createElement("div")
+
+    let name = document.createElement("p")
+    name.textContent = hotel.name
+
+
+    let city = document.createElement("p")
+    city.textContent = hotel.city
+
+    let price = document.createElement("p")
+    price.textContent =  "Rs" + " " + hotel.price * 100
+
+    let rating = document.createElement("p")
+    rating.textContent = parseInt(hotel.rating)
+
+    datadiv.append(name,city,price,rating)
+
+    let div = document.createElement("div")
+
+    div.append(imgdiv, datadiv)
+
+    container.append(div)
+
+
+    
+    
+    
+}  
+
+</script>

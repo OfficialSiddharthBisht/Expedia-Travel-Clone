@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id = "search">
+
+        <h1>Search Stays</h1>
+        <input type = "text" placeholder="Going to">
+        <input type = "date" placeholder = "check in"> 
+        <input type = "date" placeholder = "check out">
+        <input type = "text" placeholder= "Travellers">
+         <br/>
+         <br/>
+        <button onclick = "search()"> <a href = "search-hotels.html">Search</a></button>
+    </div>
+</body>
+</html>
+<script>   
+
+    let hotels = [
+        {
+        "id": "412c0468-3637-4563-a111-6cc49c271d16",
+        "name": "Hotel Taj",
+        "country": "India",
+        "city": "bbsr",
+        "price": 340,
+        "images": [
+        "https://media.gettyimages.com/photos/the-taj-mahal-palace-hotel-at-dusk-picture-id520443060?k=20&m=520443060&s=612x612&w=0&h=PaGOxrU9P1yUCXeFGrPFkkcXl7aLdOAG2pzpqPDJl6g=",
+        "https://media.gettyimages.com/photos/taj-mahal-hotel-bombay-picture-id521916998?k=20&m=521916998&s=612x612&w=0&h=COz7tCsUbUVDXefmtMON3sKMsDYq7o0XORWmfDKO7-M=",
+        "https://media.gettyimages.com/photos/the-taj-mahal-palace-hotel-picture-id989771498?k=20&m=989771498&s=612x612&w=0&h=rKnbobhJte0htD8rGUGFLErOD3eD4BcRk8azGzqaFG8=",
+        "https://media.gettyimages.com/photos/diners-enjoying-their-meals-at-machan-coffee-shop-taj-mahal-hotel-new-picture-id90565443?k=20&m=90565443&s=612x612&w=0&h=3RXZseNan-PdYBHUHNl-vrE1gQDwpHRELqovuq5FWcI=",
+        ],
+        "date_start": "2022-02-28T19:21:49.720Z",
+        "date_end": "2022-07-08T23:13:40.977Z",
+        "stars": 3,
+        "rating": 1.2260803038065373,
+        "description": "Amet quas voluptas. Cum excepturi voluptatem alias eos eaque eveniet. Quae at ipsam excepturi reprehenderit. Quisquam consequatur et possimus aspernatur omnis velit facere pariatur."
+        },
+        {
+        "id": "8e1ae5ca-5032-406c-958a-785c3b811d03",
+        "name": "Hotel Noor Fatai",
+        "country": "United States Minor Outlying Islands",
+        "city": "vizag",
+        "price": 661,
+        "images": [
+        "https://media.gettyimages.com/photos/luxury-construction-hotel-with-swimming-pool-at-sunset-picture-id903417402?k=20&m=903417402&s=612x612&w=0&h=a73RID4dpoONgEimlAbtupptZOkGb_ibZ0H5HoJj1iE=",
+        "https://media.gettyimages.com/photos/indian-concierge-welcome-guest-at-hotel-entrance-agra-india-picture-id669319514?k=20&m=669319514&s=612x612&w=0&h=XQ_tVieZ1r4lKXdt3UqGzz35pUie14JOlqKtipjA0bM=",
+        "https://media.gettyimages.com/photos/lobby-entrance-with-reception-desk-and-lounge-area-picture-id907633960?k=20&m=907633960&s=612x612&w=0&h=DzP2NB7nFfuFLuE4Ox3Lnp01y5MOneaaJYmGeYZdaIg=",
+        ],
+        "date_start": "2022-02-28T19:21:49.720Z",
+        "date_end": "2022-10-17T04:39:29.370Z",
+        "stars": 3,
+        "rating": 2.5725330158543622,
+        "description": "Ullam autem aut rerum consequatur itaque quo ullam sit. Aut dolor consectetur harum voluptatibus tempora ullam eos suscipit. Aut blanditiis possimus vero. Repellat commodi reprehenderit libero esse sed."
+        },
+        {
+        "id": "09679868-7e85-4e80-b715-999f14c32602",
+        "name": "Hotel Everest",
+        "country": "Lao People's Democratic Republic",
+        "city": "mumbai",
+        "price": 994,
+        "images": [
+        "https://media.gettyimages.com/photos/modern-lounge-chairs-next-to-swimming-pool-picture-id109350324?k=20&m=109350324&s=612x612&w=0&h=I_ZazVVVskz63pcaQHpcuLZAEn-RxLI3sJGrVBKh_3c=",
+        "https://media.gettyimages.com/photos/udaipur-city-palace-picture-id1200756095?k=20&m=1200756095&s=612x612&w=0&h=KcI-4tO4g2RmkJXfwGtuGWeK047zMdXFJKvRJcDaAUI=",
+        ],
+        "date_start": "2022-02-28T19:21:49.720Z",
+        "date_end": "2022-11-04T09:33:41.660Z",
+        "stars": 5,
+        "rating": 3.0452429245509407,
+        "description": "Officiis perspiciatis voluptatem porro at voluptas. Animi et corporis porro incidunt quisquam libero enim corrupti. Nesciunt sed ea aliquam laboriosam natus exercitationem ullam possimus minus. Rerum quo qui facere. Pariatur excepturi odit id nam dolores dolorem laboriosam dicta aut. Neque aut sit sed repellendus sit et."
+        },
+        {
+        "id": "65bf93af-cf40-400c-afaf-0887528aaa97",
+        "name": "Oborey Hotel",
+        "country": "Latvia",
+        "city": "chennai",
+        "price": 155,
+        "images": [
+        "https://media.gettyimages.com/photos/mid-adult-couple-walking-next-to-swimming-pool-on-vacation-picture-id650467668?k=20&m=650467668&s=612x612&w=0&h=Q7YK31sIChgDJVwrp0TIukO3qWPJ0y7akxTalJQVxp8=",
+        "https://media.gettyimages.com/photos/sunrise-over-the-deluxe-rooms-with-semi-private-pool-at-the-ultra-picture-id128115553?k=20&m=128115553&s=612x612&w=0&h=CZ90vift0JGjr6DJWp99hID4uAKLkL13q9j7_qsxnWI="
+        ],
+        "date_start": "2022-02-28T19:21:49.720Z",
+        "date_end": "2022-05-03T16:02:52.414Z",
+        "stars": 3,
+        "rating": 2.2555867888016015,
+        "description": "Ut dolor vel. Unde similique voluptatem nisi. Omnis ut vero et inventore molestias delectus illo voluptas libero. Temporibus sint in sapiente ex ipsa illo ut aut deserunt. Ipsam unde aspernatur magnam soluta commodi ratione corrupti. Autem enim nihil dolores."
+        },
+    ]
+    
+    
+    function search(){
+        let input = document.getElementById("inputcity").value 
+        for (let i = 0; i < hotels.length; i++){
+            if (input == hotels[i].city){
+                displayData(hotels[i])
+                location.href = "search-hotels.html"
+            }
+        }
+        console.log(hotels[i], "rahul")
+    }
+    
+    let container = document.getElementById("container")
+    const displayData = (hotel) =>{
+        let card = document.createElement("div")
+    
+        let name = document.createElement("p")
+        name.textContent = hotel.name
+    
+        let image = document.createElement("img")
+        image.src =  hotel.images[0]
+    
+        card.append(image,name)
+    
+        container.append(card)
+    
+        
+        
+    }  
+    
+    </script>
