@@ -4,9 +4,9 @@ function navbar(){
     <ul>
         <div id="left">
             <li><a href="index.html">
-                <img src="https://www.expedia.co.in/_dms/header/logo.svg?locale=en_GB&siteid=27&2" alt="" id="logo">
-            </a></li>
-
+                <img src="https://www.expedia.co.in/_dms/header/logo.svg?locale=en_GB&siteid=27&2" alt="" id="logo" width: 50px height =50px>
+                </a></li>
+                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
             <select name="travel" id="travel">
                 <option value="" selected disabled>More Travel</option>
                 <option value="">Stays</option>

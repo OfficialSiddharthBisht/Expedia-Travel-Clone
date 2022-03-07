@@ -1,6 +1,8 @@
 .Box_below_navbar
 {
-  border: solid black;
+  margin-left: 60px;
+  margin-right: 60px;
+  border: solid grey;
   border-radius: 7px;
   text-align:center;
   padding: 15px;
@@ -14,7 +16,7 @@
 .btn_container .tab_buttns
 { 
   display: block;
-  border: light black;
+  /* border: light black; */
   background-color:white;
   height:50px;
   margin: 1px;
